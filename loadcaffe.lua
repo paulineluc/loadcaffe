@@ -11,7 +11,7 @@ loadcaffe.load = function(prototxt_name, binary_name, backend)
   C.loadBinary(handle, prototxt_name, binary_name)
   if old_val == handle[1] then return end
 
-  -- transforms caffe prototxt to torch lua file model description and 
+  -- transforms caffe prototxt to torch lua file model description and
   -- writes to a script file
   local lua_name = prototxt_name..'.lua'
   C.convertProtoToLua(handle, lua_name, backend)
